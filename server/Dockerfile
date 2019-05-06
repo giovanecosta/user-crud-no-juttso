@@ -11,3 +11,4 @@ COPY . .
 EXPOSE 3000
 
 CMD [ "npm", "run", "server" ]
+#CMD ["sh", "-c", "tail -f /dev/null"]

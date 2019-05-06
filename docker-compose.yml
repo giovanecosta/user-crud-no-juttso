@@ -5,13 +5,24 @@ services:
     image: mongo
     ports:
     - "27017:27017"
-  app:
+  client:
+    build:
+      context: client
     depends_on:
-      - 'mongo'
-    build: .
+      - 'server'
     ports:
       - '3000:3000'
     volumes:
-      - '.:/app'
+      - './client:/app'
+  server:
+    build:
+      context: server
+    ports:
+      - '8080:8080'
+    volumes:
+      - './server:/app'
+    depends_on:
+      - 'mongo'
     links:
-      - mongo
+      - 'mongo'
+
