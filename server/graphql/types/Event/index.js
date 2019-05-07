@@ -1,7 +1,7 @@
 export default `
   type Event {
     _id: String!
-    _author: String!
+    _author: String
     time: String!
     type: String!
   }

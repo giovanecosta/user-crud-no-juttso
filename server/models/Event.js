@@ -10,7 +10,6 @@ const EventSchema = new Schema({
   _author: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true
   },
   time: {
     type: String,
