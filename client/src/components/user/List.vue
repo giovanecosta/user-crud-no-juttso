@@ -16,7 +16,14 @@
       @row-click="rowClick"
     >
       <el-table-column
-        fixed
+        fixed="left"
+        label=""
+        width="40">
+        <template>
+          <i class="el-icon-info"></i>
+        </template>
+      </el-table-column>
+      <el-table-column
         prop="name"
         label="Name"
         width="150"
@@ -72,7 +79,7 @@
         this.$router.push({ name: 'user-create' });
       },
       rowClick(row, _column, _event) {
-        this.$router.push({ name: 'user-view', params: { id: row.id } });
+        this.$router.push({ name: 'user-view', params: { id: row._id } });
       },
     }
   }

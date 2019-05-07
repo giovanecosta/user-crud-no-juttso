@@ -27,6 +27,9 @@ export const mutations = {
   setUserList(state, userList) {
     state.userList = userList;
   },
+  setUser(state, user) {
+    state.user = user;
+  },
 };
 
 export const actions = {
@@ -36,15 +39,34 @@ export const actions = {
       query: `
         query{
           users {
-            id
+            _id
             name
             email
+            phone
           }
         }
       `
     });
 
     commit('setUserList', res.data.data.users);
+  },
+  async fetchUser({ commit }, id) {
+    const res = await axios.post(
+      'http://localhost:8080/graphql', {
+      query: `
+        query fetchUser($id: String!) {
+          user (_id: $id) {
+            _id
+            name
+            email
+            phone
+          }
+        }
+      `,
+      variables: { id }
+    });
+
+    commit('setUser', res.data.data.user);
   }
 };
 
