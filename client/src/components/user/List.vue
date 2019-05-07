@@ -29,7 +29,7 @@
       >
       </el-table-column>
       <el-table-column
-        prop="telefone"
+        prop="phone"
         label="Telefone"
         min-width="120"
       >
