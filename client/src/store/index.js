@@ -60,6 +60,9 @@ export const mutations = {
   setUserList(state, userList) {
     state.userList = userList;
   },
+  setEventList(state, eventList) {
+    state.eventList = eventList;
+  },
   setUser(state, user) {
     state.user = user;
   },
@@ -100,6 +103,23 @@ export const actions = {
     });
 
     commit('setUser', res.data.data.user);
+  },
+  async fetchEventList({ commit }) {
+    const res = await axios.post(
+      'http://localhost:8080/graphql', {
+      query: `
+        query {
+          events {
+            _id
+            type
+            _author
+            time
+          }
+        }
+      `
+    });
+
+    commit('setEventList', res.data.data.events);
   }
 };
 
