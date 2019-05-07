@@ -12,7 +12,7 @@ export const mutations = {
       query: `
         mutation addUser($name: String!, $email: String!, $password: String!, $phone: String!) {
           addUser(name: $name, email: $email, password: $password, phone: $phone) {
-            id
+            _id
             name
             email
             phone
@@ -23,6 +23,21 @@ export const mutations = {
     });
 
     state.user = res.data.data.addUser;
+  },
+  async deleteUser(state, id) {
+    const res = await axios.post(
+      'http://localhost:8080/graphql', {
+      query: `
+        mutation deleteUser($id: String!) {
+          deleteUser(_id: $id) {
+            _id
+          }
+        }
+      `,
+      variables: { id }
+    });
+
+    state.user = null;
   },
   setUserList(state, userList) {
     state.userList = userList;

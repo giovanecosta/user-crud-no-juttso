@@ -9,39 +9,41 @@
         Add User
       </el-button>
     </div>
-    <el-table
-      :data="userList"
-      stripe
-      class="table"
-      @row-click="rowClick"
-    >
-      <el-table-column
-        fixed="left"
-        label=""
-        width="40">
-        <template>
-          <i class="el-icon-info"></i>
-        </template>
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="Name"
-        width="150"
+    <div class="table-holder">
+      <el-table
+        :data="userList"
+        stripe
+        class="table"
+        @row-click="rowClick"
       >
-      </el-table-column>
-      <el-table-column
-        prop="email"
-        label="E-mail"
-        min-width="200"
-      >
-      </el-table-column>
-      <el-table-column
-        prop="phone"
-        label="Telefone"
-        min-width="120"
-      >
-      </el-table-column>
-    </el-table>
+        <el-table-column
+          fixed="left"
+          label=""
+          width="40">
+          <template>
+            <i class="el-icon-info info"></i>
+          </template>
+        </el-table-column>
+        <el-table-column
+          prop="name"
+          label="Name"
+          width="150"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="email"
+          label="E-mail"
+          min-width="200"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="phone"
+          label="Telefone"
+          min-width="120"
+        >
+        </el-table-column>
+      </el-table>
+    </div>
   </div>
 </template>
 <style scoped>
@@ -51,6 +53,16 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .table-holder {
+    margin: 0 -19px 0 -19px;
+  }
+
+  .info {
+    cursor: pointer;
+    font-size: 18px;
+  }
+
 
 </style>
 <script>
