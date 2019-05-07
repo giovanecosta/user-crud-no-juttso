@@ -30,9 +30,9 @@ export default {
         });
       });
     },
-    editUser: (root, { id, name, email, phone, password }) => {
+    editUser: (root, { _id, name, email, phone, password }) => {
       return new Promise((resolve, reject) => {
-        User.findOneAndUpdate({ id }, { $set: { name, email, phone, password } }).exec(
+        User.findOneAndUpdate({ _id }, { $set: { name, email, phone, password } }).exec(
           (err, res) => {
             err ? reject(err) : resolve(res);
           }

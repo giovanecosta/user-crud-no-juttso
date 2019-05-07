@@ -46,12 +46,11 @@
 
 <script>
 
-  import { Button, DatePicker, Form, FormItem, Input } from 'element-ui';
+  import { Button, Form, FormItem, Input } from 'element-ui';
 
   export default {
     components: {
       [Button.name]: Button,
-      [DatePicker.name]: DatePicker,
       [Form.name]: Form,
       [FormItem.name]: FormItem,
       [Input.name]: Input,
