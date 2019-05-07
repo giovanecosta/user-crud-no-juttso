@@ -3,6 +3,7 @@
     <div class="header">
       <h1>Users List</h1>
       <el-button
+        @click="addUser"
         type="primary"
         icon="el-icon-plus">
         Add User
@@ -11,7 +12,9 @@
     <el-table
       :data="userList"
       stripe
-      class="table">
+      class="table"
+      @row-click="rowClick"
+    >
       <el-table-column
         fixed
         prop="name"
@@ -64,5 +67,13 @@
     beforeCreate() {
       this.$store.dispatch('fetchUserList');
     },
+    methods: {
+      addUser() {
+        this.$router.push({ name: 'user-create' });
+      },
+      rowClick(row, _column, _event) {
+        this.$router.push({ name: 'user-view', params: { id: row.id } });
+      },
+    }
   }
 </script>
