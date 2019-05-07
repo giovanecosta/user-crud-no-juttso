@@ -1,16 +1,18 @@
 export default `
   type User {
-    id: String!
+    _id: String!
     name: String!
     email: String!
+    phone: String
+    password: String!
   }
   type Query {
-    user(id: String!): User
+    user(_id: String!): User
     users: [User]
   }
   type Mutation {
-    addUser(name: String!, email: String!): User
-    editUser(id: String, name: String, email: String): User
-    deleteUser(id: String, name: String, email: String): User
+    addUser(name: String!, email: String!, phone: String!, password: String!): User
+    editUser(_id: String, name: String, email: String, phone: String, password: String): User
+    deleteUser(_id: String, name: String, email: String): User
   }
 `;

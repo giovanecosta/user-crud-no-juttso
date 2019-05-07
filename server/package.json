@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "version": "1.0.0",
+  "name": "user-crud-no-juttso",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
