@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-link to="/users">Users</router-link>
     <p>
       Event List
     </p>
