@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-// Create the User Schema.
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -19,7 +18,8 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  events : [{ type: Schema.Types.ObjectId, ref: 'Event' }]
 });
 
 const User = mongoose.model("User", UserSchema);
