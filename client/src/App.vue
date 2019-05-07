@@ -62,12 +62,11 @@
 <script>
 
 
-  import { Button, Container, Dropdown, DropdownItem, DropdownMenu, Footer, Header, Main  } from 'element-ui';
+  import { Container, Dropdown, DropdownItem, DropdownMenu, Footer, Header, Main  } from 'element-ui';
 
   export default {
     name: 'app',
     components: {
-      [Button.name]: Button,
       [Container.name]: Container,
       [Dropdown.name]: Dropdown,
       [DropdownItem.name]: DropdownItem,
